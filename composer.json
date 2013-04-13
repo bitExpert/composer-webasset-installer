@@ -2,6 +2,15 @@
 	"name": "bitexpert/web-asset-installer",
 	"description": "Web Asset Installer",
 	"type": "composer-installer",
+	"keywords": ["composer","installer", "web", "assets"],
+	"homepage": "https://github.com/bitExpert/composer-webasset-installer",
+	"license": "Apache 2.0",
+	"authors": [
+		{
+			"name": "Stephan Hochdörfer",
+			"email": "S.Hochdoerfer@bitExpert.de"
+		}
+	],
 	"version": "0.0.1",
 	"autoload": {
 		"psr-0": {"bitExpert\\Composer": ["src/", "tests/"]}
