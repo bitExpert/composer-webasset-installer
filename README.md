@@ -12,6 +12,7 @@ Wrap-up: The WebAsset installer will install Composer packages with the type of
 "webasset" in an webroot folder not in the vendor directory.
 
 How to use it?
+
 	{
 		"name": "vendor/MyWebPackage",
 		"type": "webasset",
