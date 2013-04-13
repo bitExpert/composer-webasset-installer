@@ -4,7 +4,7 @@ require __DIR__ . '/../../../vendor/composer/composer/tests/Composer/Test/TestCa
 
 
 /**
- * Unit test for {@link \bF\Beanfactory\Bean\Property\ConfigValue}.
+ * Unit test for {@link \bitExpert\Composer\WebAssetInstaller}.
  *
  * @copyright bitExpert AG
  * @covers bitExpert\Composer\WebAssetInstaller
