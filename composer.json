@@ -11,7 +11,8 @@
 			"email": "S.Hochdoerfer@bitExpert.de"
 		}
 	],
-	"version": "0.0.1",
+	"minimum-stability": "dev",
+	"version": "0.1.0",
 	"autoload": {
 		"psr-0": {"bitExpert\\Composer": ["src/", "tests/"]}
 	},
@@ -22,5 +23,10 @@
 		"phpunit/phpunit":    "3.7.*@stable",
 		"composer/composer":  "1.*@dev",
 		"mikey179/vfsStream": "v1.2.0"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1.0-dev"
+		}
 	}
 }
