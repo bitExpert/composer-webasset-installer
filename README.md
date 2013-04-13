@@ -17,6 +17,6 @@ How to use it?
 		"name": "vendor/MyWebPackage",
 		"type": "webasset",
 		"require": {
-			"bitexpert/WebAssetInstaller": "*"
+			"bitexpert/web-asset-installer": "*"
 		}
 	}

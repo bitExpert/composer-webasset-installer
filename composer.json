@@ -1,5 +1,5 @@
 {
-	"name": "bitexpert/WebAssetInstaller",
+	"name": "bitexpert/web-asset-installer",
 	"description": "Web Asset Installer",
 	"type": "composer-installer",
 	"version": "0.0.1",
