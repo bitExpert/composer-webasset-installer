@@ -1,4 +1,14 @@
 <?php
+/*
+ * This file is part of the Web Asset Installer Plugin.
+ *
+ * (c) bitExpert AG
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+
 namespace bitExpert\Composer;
 require __DIR__ . '/../../../vendor/composer/composer/tests/Composer/Test/TestCase.php';
 

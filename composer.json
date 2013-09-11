@@ -1,7 +1,7 @@
 {
 	"name": "bitexpert/web-asset-installer",
-	"description": "Web Asset Installer",
-	"type": "composer-installer",
+	"description": "Web Asset Installer Plugin",
+	"type": "composer-plugin",
 	"keywords": ["composer","installer", "web", "assets"],
 	"homepage": "https://github.com/bitExpert/composer-webasset-installer",
 	"license": "Apache 2.0",
@@ -12,15 +12,15 @@
 		}
 	],
 	"minimum-stability": "dev",
-	"version": "0.2.1",
+	"version": "0.3.0-dev",
 	"autoload": {
 		"psr-0": {"bitExpert\\Composer": ["src/", "tests/"]}
 	},
 	"extra": {
-		"class": "\\bitExpert\\Composer\\WebAssetInstaller",
-		"branch-alias": {
-			"dev-master": "0.2.1-dev"
-		}
+		"class": "\\bitExpert\\Composer\\WebAssetInstallerPlugin"
+	},
+	"require": {
+		"composer-plugin-api": "1.0.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit":    "3.7.*@stable",

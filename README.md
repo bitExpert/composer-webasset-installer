@@ -13,10 +13,28 @@ Wrap-up: The WebAsset installer will install Composer packages with the type of
 
 How to use it?
 
+
+The composer.json of your webassets package needs to look like this: The package
+needs to be of type "webasset" and needs to define a target-dir in the extra`s
+configuration. The target-dir defines the relative path beneath the webroot
+folder where the webassets get installed.
+
 	{
-		"name": "vendor/MyWebPackage",
+		"name": "vendor/mywebpackage",
 		"type": "webasset",
 		"require": {
 			"bitexpert/web-asset-installer": "*"
+		},
+		"extra": {
+			"target-dir": "mywebpackage/"
+		}
+	}
+
+The composer.json of your main project looks like this:
+
+	{
+		"name": "my/mywebproject",
+		"require": {
+			"vendor/mywebpackage": "*"
 		}
 	}

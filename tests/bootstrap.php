@@ -1,14 +1,13 @@
 <?php
-
 /*
- * This file is part of Composer.
+ * This file is part of the Web Asset Installer Plugin.
  *
- * (c) Nils Adermann <naderman@naderman.de>
- *     Jordi Boggiano <j.boggiano@seld.be>
+ * (c) bitExpert AG
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 error_reporting(E_ALL);
 

@@ -1,6 +1,18 @@
 <?php
+/*
+ * This file is part of the Web Asset Installer Plugin.
+*
+* (c) bitExpert AG
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
+
 namespace bitExpert\Composer;
 use Composer\Package\PackageInterface;
+use Composer\Composer;
+use Composer\IO\IOInterface;
 
 
 /**
@@ -8,13 +20,24 @@ use Composer\Package\PackageInterface;
  * the package in the webroot folder not in the (default) vendor directory making
  * the files publicly accessible.
  *
- * @copyright bitExpert AG
  * @author Stephan Hochdörfer
  */
 
 
 class WebAssetInstaller extends \Composer\Installer\LibraryInstaller
 {
+	/**
+	 * Creates a new {@link \bitExpert\Composer\WebAssetInstaller}.
+	 *
+	 * @param IOInterface $io
+	 * @param Composer $composer
+	 */
+	public function __construct(IOInterface $io, Composer $composer)
+	{
+		parent::__construct($io, $composer, 'webasset');
+	}
+
+
 	/**
 	 * @see Composer\Installer\LibraryInstaller::getInstallPath
 	 */
@@ -29,15 +52,6 @@ class WebAssetInstaller extends \Composer\Installer\LibraryInstaller
 		}
 
 		return $this->getRootPath() . '/' . $extra['target-dir'];
-	}
-
-
-	/**
-	 * @see Composer\Installer\LibraryInstaller::supports
-	 */
-	public function supports($packageType)
-	{
-		return (bool) ('webasset' === $packageType);
 	}
 
 
