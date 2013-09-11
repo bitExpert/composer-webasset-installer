@@ -26,20 +26,26 @@ use Composer\IO\IOInterface;
 
 class WebAssetInstaller extends \Composer\Installer\LibraryInstaller
 {
+	protected $baseDir;
+
+
 	/**
 	 * Creates a new {@link \bitExpert\Composer\WebAssetInstaller}.
 	 *
 	 * @param IOInterface $io
 	 * @param Composer $composer
+	 * @param String $baseDir
 	 */
-	public function __construct(IOInterface $io, Composer $composer)
+	public function __construct(IOInterface $io, Composer $composer, $baseDir = 'webroot/')
 	{
 		parent::__construct($io, $composer, 'webasset');
+
+		$this->baseDir = $baseDir;
 	}
 
 
 	/**
-	 * @see Composer\Installer\LibraryInstaller::getInstallPath
+	 * @see \Composer\Installer\LibraryInstaller::getInstallPath
 	 */
 	public function getInstallPath(PackageInterface $package)
 	{
@@ -51,17 +57,18 @@ class WebAssetInstaller extends \Composer\Installer\LibraryInstaller
 			);
 		}
 
-		return $this->getRootPath() . '/' . $extra['target-dir'];
+		return $this->getBaseDir() . '/' . $extra['target-dir'];
 	}
 
 
 	/**
-	 * Returns the relative root path where to install the web assets.
+	 * Returns the relative root path where to install the web assets. Can be
+	 * configured in the root package via the extras field "webasset-basedir"
 	 *
 	 * @return string
 	 */
-	protected function getRootPath()
+	protected function getBaseDir()
 	{
-		return 'webroot';
+		return $this->baseDir;
 	}
 }

@@ -30,11 +30,24 @@ folder where the webassets get installed.
 		}
 	}
 
-The composer.json of your main project looks like this:
+The composer.json of your root project looks like this:
 
 	{
 		"name": "my/mywebproject",
 		"require": {
 			"vendor/mywebpackage": "*"
+		}
+	}
+
+To change the base folder in which the webassets get installed simply add the
+"webasset-basedir" extra param to your root package composer.json file:
+
+	{
+		"name": "my/mywebproject",
+		"require": {
+			"vendor/mywebpackage": "*"
+		},
+		"extra": {
+			"webasset-basedir": "htdocs/"
 		}
 	}

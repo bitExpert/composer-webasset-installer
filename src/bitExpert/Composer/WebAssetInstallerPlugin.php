@@ -13,6 +13,7 @@ namespace bitExpert\Composer;
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
+use Composer\Package\Package;
 
 
 /**
@@ -27,9 +28,23 @@ use Composer\Plugin\PluginInterface;
 
 class WebAssetInstallerPlugin implements PluginInterface
 {
+	/**
+	 * @see \Composer\Plugin\PluginInterface::activate
+	 */
 	public function activate(Composer $composer, IOInterface $io)
 	{
-		$installer = new WebAssetInstaller($io, $composer);
+		$baseDir = 'webroot/';
+		$package = $composer->getPackage();
+		if($package instanceof Package)
+		{
+			$extra = $package->getExtra();
+			if(isset($extra['webasset-basedir']))
+			{
+				$baseDir = $extra['webasset-basedir'];
+			}
+		}
+
+		$installer = new WebAssetInstaller($io, $composer, $baseDir);
 		$composer->getInstallationManager()->addInstaller($installer);
 	}
 }
