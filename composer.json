@@ -20,7 +20,7 @@
 		"class": "\\bitExpert\\Composer\\WebAssetInstallerPlugin"
 	},
 	"require": {
-		"composer-plugin-api": "1.0.0"
+		"composer-plugin-api": "^1.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit":    "3.7.*@stable",
