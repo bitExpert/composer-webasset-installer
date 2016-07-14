@@ -12,7 +12,7 @@
 		}
 	],
 	"minimum-stability": "dev",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"autoload": {
 		"psr-0": {"bitExpert\\Composer": ["src/", "tests/"]}
 	},
